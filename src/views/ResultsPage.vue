@@ -1,6 +1,6 @@
 <template>
     <div class="results">
-        <router-link to="/">Home</router-link>
+        <router-link to="/" tag="button" class="button results__button-home" />
         <div class="results__data">
             <div class="results__data-item">
                 <p class="percent">{{ getPercent(med1Count) }} %</p>
@@ -25,9 +25,9 @@
         </div>
 
         <router-link
+            to="/main-page"
             tag="button"
             class="button results__button-refresh"
-            to="/main-page"
         >
             Попробовать еще
         </router-link>
@@ -60,6 +60,19 @@ export default {
         display: flex;
         margin-left: 130px;
         &-item {
+            width: 180px;
+            text-align: center;
+            margin-bottom: 50px;
+            .percent {
+                font-size: 48px;
+                line-height: 59px;
+                color: #424242;
+            }
+            .name {
+                font-size: 16px;
+                line-height: 20px;
+                color: #424242;
+            }
         }
     }
     &-info {
@@ -90,8 +103,8 @@ export default {
             content: '';
             margin-bottom: 40px;
             width: 500px;
-            height: 3px;
-            background-color: red;
+            height: 2px;
+            background-color: #d9d9d9;
         }
     }
     &__button-refresh {
@@ -105,6 +118,14 @@ export default {
         line-height: 29px;
         font-weight: bold;
         color: white;
+    }
+    &__button-home {
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        height: 70px;
+        width: 70px;
+        background: center no-repeat url('../assets/icons/home-grad.png');
     }
 }
 
