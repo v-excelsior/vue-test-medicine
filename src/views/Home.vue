@@ -1,0 +1,75 @@
+<template>
+    <div class="home">
+        <div class="greeting">
+            <span class="greeting__welcome-text">Добро пожаловать в игру</span>
+            <h2 class="greeting__game-name">
+                Помоги <span class="upper">фармацевту</span>
+            </h2>
+            <router-link
+                to="/main-page"
+                tag="button"
+                class="button greeting__button"
+            >
+                Начать
+            </router-link>
+        </div>
+    </div>
+</template>
+<style lang="scss">
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.home {
+    height: 100vh;
+    background: center / cover no-repeat url('../assets/home-bg.jpg');
+    color: white;
+}
+.greeting {
+    position: absolute;
+    width: 860px;
+    height: 860px;
+    left: 110px;
+    top: -30px;
+    background: linear-gradient(63.53deg, #2d8550 16.62%, #5e6ec2 83.38%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    letter-spacing: 0.02em;
+    &__welcome-text {
+        font-size: 35px;
+        line-height: 41px;
+        margin-left: 186px;
+        margin-bottom: 29px;
+    }
+    &__game-name {
+        font-size: 60px;
+        line-height: 66px;
+        width: 580px;
+        margin-left: 181px;
+        margin-bottom: 120px;
+        .upper {
+            text-transform: uppercase;
+            font-size: 70px;
+            line-height: 77px;
+        }
+    }
+    &__button {
+        width: 380px;
+        height: 90px;
+        font-size: 36px;
+        line-height: 44px;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        color: #8e9ad5;
+        align-self: center;
+        margin-bottom: 160px;
+        &:hover {
+            transform: scale(1.02);
+            color: darken($color: #8e9ad5, $amount: 10%);
+        }
+    }
+}
+</style>
