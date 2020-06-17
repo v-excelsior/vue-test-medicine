@@ -1,3 +1,4 @@
+@import '../mixins.scss';
 .results {
     display: flex;
     flex-direction: column;
@@ -67,7 +68,7 @@
         color: white;
         transition: 0.2s;
         &:hover {
-            background: darken($color: #a9a9a9, $amount: 20%)
+            background: darken($color: #a9a9a9, $amount: 20%);
         }
     }
     &__button-home {
@@ -80,6 +81,12 @@
         &:hover {
             transform: rotate(15deg);
             filter: grayscale(1);
+        }
+    }
+    @include screen(max, 1100px) {
+        justify-content: flex-end;
+        &-info {
+            margin-bottom: 320px;
         }
     }
 }
