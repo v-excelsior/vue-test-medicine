@@ -1,0 +1,181 @@
+@import '../mixins.scss';
+
+.main-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    .main-page__info {
+        width: 470px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(77.12deg, #2d8550 16.62%, #5e6ec2 83.38%);
+    }
+    .main-page__game {
+        width: calc(100vw - 470px);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.nav {
+    margin-top: 70px;
+    margin-left: 50px;
+    &__button {
+        height: 70px;
+        width: 70px;
+        &:hover {
+            transform: rotate(15deg);
+            filter: grayscale(1);
+        }
+        &-home {
+            background: center no-repeat url('../assets/icons/home.png');
+        }
+        &-refresh {
+            margin-left: 38px;
+            background: center no-repeat url('../assets/icons/refresh.png');
+        }
+    }
+}
+.parameters {
+    .parameters__label {
+        display: inline-block;
+        margin: 20px 40px;
+        font-size: 36px;
+        line-height: 44px;
+        color: white;
+        font-weight: bold;
+    }
+    .counters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .counter {
+            margin: 10px 20px;
+            box-shadow: 0px 0px 50px rgba(131, 42, 64, 0.4);
+            background-color: white;
+            border-radius: 40px;
+            height: 80px;
+            width: 190px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            &__data {
+                font-size: 48px;
+                line-height: 59px;
+                font-weight: bold;
+                color: #424242;
+                text-align: center;
+                flex-grow: 1;
+            }
+        }
+    }
+}
+.queue-counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    height: 134px;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: white;
+    &__data {
+        font-size: 44px;
+        line-height: 50px;
+        .current-length {
+            display: inline-block;
+            font-weight: bold;
+        }
+    }
+}
+.vue-tinder {
+    margin: 140px auto 0;
+    width: 540px;
+    height: 590px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-evenly;
+    width: calc(100vw - 470px);
+    &__button {
+        font-size: 28px;
+        line-height: 34px;
+        font-weight: bold;
+        color: #fff;
+        height: 90px;
+        margin: 50px 15px 50px;
+        flex-grow: 1;
+        &:hover {
+            filter: grayscale(1);
+        }
+        &-violet {
+            border: 2px solid #8049c7;
+            background: linear-gradient(258.29deg, #8049c7 0%, #ca57fd 100%);
+        }
+        &-blue {
+            border: 2px solid #169ae4;
+            background: linear-gradient(258.29deg, #169ae4 0%, #0cc4fa 100%);
+        }
+        &-yellow {
+            border: 2px solid darken($color: yellow, $amount: 20%);
+            background: linear-gradient(
+                90deg,
+                yellow 0%,
+                darken($color: yellow, $amount: 20%) 100%
+            );
+            //изменил цвет, не видно текст на кнопке
+        }
+    }
+}
+.med {
+    position: absolute;
+    height: 120px;
+    width: 360px;
+    bottom: 100px;
+    left: 100px;
+    transform: translate(-50%, 50%);
+    &-1 {
+        color: #8049c7;
+        border: 8px solid #8049c7;
+        transform: rotate(-30deg);
+        @include label-after('Препарат 1');
+    }
+    &-2 {
+        color: #169ae4;
+        border: 8px solid #169ae4;
+        transform: rotate(-15deg);
+        @include label-after('Препарат 2');
+    }
+    &-3 {
+        color: yellow;
+        border: 8px solid yellow;
+        transform: rotate(30deg);
+        @include label-after('Препарат 3');
+    }
+}
+
+.results-button {
+    margin: auto;
+    height: 100px;
+    width: 250px;
+    color: white;
+    font-size: 34px;
+    background: #0cc4fa;
+    transition: 0.2s;
+    &:hover {
+        width: 260px;
+    }
+}
+
+@media (max-height: 900px) {
+    .vue-tinder {
+        margin-top: auto;
+    }
+}

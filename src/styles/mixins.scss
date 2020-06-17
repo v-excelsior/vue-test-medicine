@@ -1,0 +1,13 @@
+@mixin label-after($text){
+    &::after {
+        display: block;
+        position: absolute;
+        line-height: 100px;
+        text-align: center;
+        font-size: 52px;
+        font-weight: bold;
+        width: 360px;
+        content: $text;
+    }
+}
+

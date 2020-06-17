@@ -1,0 +1,7 @@
+.button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 999px; // hack to get max border-radiur
+    transition: 0.2s;
+}
