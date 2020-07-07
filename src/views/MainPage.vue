@@ -15,36 +15,18 @@
             <div class="parameters">
                 <span class="parameters__label">Параметри:</span>
                 <div class="counters">
-                    <div class="counter">
-                        <img src="../assets/icons/unhappy.png" />
-                        <transition name="move" mode="out-in">
-                            <div
-                                class="counter__data"
-                                v-text="med1Count"
-                                :key="med1Count"
-                            ></div>
-                        </transition>
-                    </div>
-                    <div class="counter">
-                        <img src="../assets/icons/happy.png" />
-                        <transition name="move" mode="out-in">
-                            <div
-                                class="counter__data"
-                                v-text="med2Count"
-                                :key="med2Count"
-                            ></div>
-                        </transition>
-                    </div>
-                    <div class="counter">
-                        <img src="../assets/icons/heart.png" />
-                        <transition name="move" mode="out-in">
-                            <div
-                                class="counter__data"
-                                v-text="med3Count"
-                                :key="med3Count"
-                            ></div>
-                        </transition>
-                    </div>
+                    <preparat-counter
+                        :iconPath="require(`../assets/icons/unhappy.png`)"
+                        :counter="med1Count"
+                    />
+                    <preparat-counter
+                        :iconPath="require(`../assets/icons/happy.png`)"
+                        :counter="med2Count"
+                    />
+                    <preparat-counter
+                        :iconPath="require(`../assets/icons/heart.png`)"
+                        :counter="med3Count"
+                    />
                 </div>
             </div>
             <div class="queue-counter">
@@ -111,12 +93,14 @@
 <script>
 import VueTinder from 'vue-tinder'
 import PatienCard from '../components/PatientCard.vue'
+import PreparatCounter from '../components/PreparatCounter.vue'
 import { mapMutations, mapState } from 'vuex'
 import mock from '../mocks/mockData'
 export default {
     components: {
         VueTinder,
         PatienCard,
+        PreparatCounter,
     },
     data() {
         return {
