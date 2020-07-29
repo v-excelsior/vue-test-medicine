@@ -17,15 +17,15 @@
                 <div class="counters">
                     <preparat-counter
                         :iconPath="require(`../assets/icons/unhappy.png`)"
-                        :counter="med1Count"
+                        :counter="medicament_1"
                     />
                     <preparat-counter
                         :iconPath="require(`../assets/icons/happy.png`)"
-                        :counter="med2Count"
+                        :counter="medicament_2"
                     />
                     <preparat-counter
                         :iconPath="require(`../assets/icons/heart.png`)"
-                        :counter="med3Count"
+                        :counter="medicament_3"
                     />
                 </div>
             </div>
@@ -108,12 +108,7 @@ export default {
         }
     },
     methods: {
-        ...mapMutations([
-            'increaceMed1Count',
-            'increaceMed2Count',
-            'increaceMed3Count',
-            'cleanState',
-        ]),
+        ...mapMutations(['increaceMedicamentCount', 'cleanState']),
         onSubmit(choice) {
             this.updateData(choice.type) //Documentation https://shanlh.github.io/vue-tinder/api/events.html#submit
         },
@@ -123,15 +118,15 @@ export default {
         updateData(choice) {
             switch (choice) {
                 case 'nope': {
-                    this.increaceMed1Count()
+                    this.increaceMedicamentCount('medicament_1')
                     break
                 }
                 case 'super': {
-                    this.increaceMed2Count()
+                    this.increaceMedicamentCount('medicament_2')
                     break
                 }
                 case 'like': {
-                    this.increaceMed3Count()
+                    this.increaceMedicamentCount('medicament_3')
                     break
                 }
             }
@@ -153,7 +148,7 @@ export default {
         },
     },
     computed: {
-        ...mapState(['med1Count', 'med2Count', 'med3Count']),
+        ...mapState(['medicament_1', 'medicament_2', 'medicament_3']),
     },
     created() {
         this.mockQueue()

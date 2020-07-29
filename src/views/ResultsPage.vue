@@ -3,15 +3,15 @@
         <router-link to="/" tag="button" class="button results__button-home" />
         <div class="results__data">
             <div class="results__data-item">
-                <p class="percent">{{ getPercent(med1Count) }} %</p>
+                <p class="percent">{{ getPercent(medicament_1) }} %</p>
                 <p class="name">Препарат 1</p>
             </div>
             <div class="results__data-item">
-                <p class="percent">{{ getPercent(med2Count) }} %</p>
+                <p class="percent">{{ getPercent(medicament_2) }} %</p>
                 <p class="name">Препарат 2</p>
             </div>
             <div class="results__data-item">
-                <p class="percent">{{ getPercent(med3Count) }} %</p>
+                <p class="percent">{{ getPercent(medicament_3) }} %</p>
                 <p class="name">Препарат 3</p>
             </div>
         </div>
@@ -46,8 +46,7 @@ export default {
         },
     },
     computed: {
-        ...mapState(['med1Count', 'med2Count', 'med3Count']),
+        ...mapState(['medicament_1', 'medicament_2', 'medicament_3']),
     },
 }
 </script>
-
